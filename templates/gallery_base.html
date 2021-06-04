@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<title>Gallery</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="gallery-container">
+  <div class="sidenav">
+    <div>
+      <a><img class="sidenav-collage" src="/images/collage1.png" /></a>
+      <form class="collage-form" action='/collage/1' method='POST'>
+        <div class='collage-option-get-wrapper'>
+          <input name="collage1" class="collage-input" type="text" required value="" title='' placeholder="1 2 3 4 6 5">
+          <span class="tooltiptext">Input indexes of images separated by spaces in order you prefer them to be.</span>
+        </div>
+        <button class="collage-button">
+          Send
+        </button>
+      </form>
+    </div>
+    <div>
+      <a><img class="sidenav-collage" src="/images/collage2.png" /></a>
+      <form class="collage-form" action='/collage/2' method='POST'>
+        <div class='collage-option-get-wrapper'>
+          <input name="collage2" class="collage-input" type="text" required value="" title=''
+            placeholder="1 2 3 4 6 5 7 8 9">
+          <span class="tooltiptext">Input indexes of images separated by spaces in order you prefer them to be.</span>
+        </div>
+        <button class="collage-button">
+          Send
+        </button>
+      </form>
+    </div>
+    <div>
+      <a><img class="sidenav-collage" src="/images/collage3.png" /></a>
+      <form class="collage-form" action='/collage/3' method='POST' title=''>
+        <div class='collage-option-get-wrapper'>
+          <input name="collage3" class="collage-input" type="text" required value="" placeholder="2 3 7 1 4">
+          <span class="tooltiptext">Input indexes of images separated by spaces in order you prefer them to be.</span>
+        </div>
+        <button class="collage-button">
+          Send
+        </button>
+      </form>
+    </div>
+    {% block download %}{% endblock %}
+
+  </div>
+  <div class="content-wrapper">
+    {% block content %}{% endblock %}
+  </div>
+</div>
+
+{% endblock %}
+
+{% block additional_script %}{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'gallery_base.html' %}
+
+{% block content %}
+
+<div class="search">
+    <form class="search-form" action='/gallery' method='POST'>
+        <input id='search' class="search-input" type="text" placeholder="Type what interests you!" name="search"
+            autofocus=True required value="">
+        <div class="number-of-images-wrapper">
+            <input id='number-of-images' class="number-of-images" type="number" min="2" max="15" name="search-number"
+                required value="">
+            <span class="tooltiptext">Number of images(2-15)</span>
+        </div>
+        <button class="search-button" type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+        <label class='search-label' for="search">You can type more than one thing, but it has to be separated by
+            spaces.</label>
+    </form>
+</div>
+<div class="gallery-wrapper">
+    {% if images %}
+
+    <form class="gallery" action='/apply-changes' method='POST'
+        title="If apply changes button does not work, your changes are incorrect.">
+        <button class="apply-changes">Apply changes</button>
+        {% for image in images%}
+
+        <div class="image">
+            <a href='/display-image/{{loop.index}}' target="_blank">
+                <img src={{ image.get_bytes_picture() }} />
+            </a>
+            <div class="image-option">
+                <input name="blur{{loop.index}}" class="option blur" type="number" placeholder="Blur: from 1 to 10"
+                    min="1" max="10">
+                <input name="brightness{{loop.index}}" class="option brightness" type="number"
+                    placeholder="Increase/decrease brightness" min="0.1" max="2" step="0.1">
+                <div class="option transpose-option-wrapper">
+                    <input name="transpose{{loop.index}}" class="option transpose" type="checkbox">
+                    <span class="tooltiptext">Check to transpose image {{loop.index}}</span>
+                </div>
+                <div class="option transpose-option-wrapper">
+                    <input name="delete{{loop.index}}" class="option transpose" type="checkbox">
+                    <span class="tooltiptext">Check to delete image {{loop.index}}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </form>
+    {% else %}
+
+    <div class="gallery">
+        {% for i in range(6) %}
+
+        <div class="empty-image">
+            <div class="empty-image-text">
+                There will be your gallery
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    {% endif %}
+
+</div>
+
+
+{% endblock %}
+
+{% block download %}
+<form action='/download-gallery' method='POST'>
+    <button class="download-button">
+        <i class="fa fa-download"></i> Download
+        Gallery
+    </button>
+</form>
+{% endblock %}

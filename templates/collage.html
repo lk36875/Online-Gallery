@@ -1,0 +1,37 @@
+{% extends 'gallery_base.html' %}
+
+{% block content %}
+<div class="collage-wrapper1">
+    <div id="collage" class="collage{{collage_style_number}}">
+        {% for image in images %}
+        <figure class="collage_item collage_item{{loop.index}}">
+            <img src={{ image.get_bytes_picture() }} class="collage_img" title="Image {{loop.index}}"
+                alt="Image {{loop.index}}">
+        </figure>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block download %}
+<button onclick="functioncanvas()" id="click" class="download-button">
+    <i class="fa fa-download"></i> Download Collage
+</button>
+{% endblock %}
+
+{% block additional_script %}
+<script src="../js/html2canvas.js"></script>
+<script>
+    function functioncanvas() {
+        html2canvas(document.querySelector("#collage")).then(canvas => {
+            document.body.appendChild(canvas)
+            canvas.id = "canvas"
+            var link = document.createElement('a');
+            link.download = 'collage.png';
+            link.href = document.getElementById('canvas').toDataURL()
+            link.click();
+
+        });
+    }
+</script>
+{% endblock %}
