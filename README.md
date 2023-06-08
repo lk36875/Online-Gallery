@@ -1,5 +1,5 @@
-###Projekt wykonany na zaliczenie przedmiotu PIPR na pierwszym semestrze Informatyki
----
+## Projekt wykonany na zaliczenie przedmiotu PIPR na pierwszym semestrze Informatyki
+
 <p align="center">
   <img src="static/images/gallery.png" alt="Image Alt Text" width="800" height="450">
 </p>
