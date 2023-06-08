@@ -1,5 +1,8 @@
 ###Projekt wykonany na zaliczenie przedmiotu PIPR na pierwszym semestrze Informatyki
 ---
+<p align="center">
+  <img src="static/images/gallery.png" alt="Image Alt Text" width="800" height="450">
+</p>
 
 Aplikacja galerii została zakodowana przy użyciu mikro frameworku aplikacji webowych napisany w języku Python. Styl stron HTML został zakodowany przy pomocy CSS, wraz z okazyjnym użyciem skryptu Javascript.
 
