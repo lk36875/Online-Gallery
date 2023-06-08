@@ -1,3 +1,6 @@
+###Projekt wykonany na zaliczenie przedmiotu PIPR na pierwszym semestrze Informatyki
+---
+
 Aplikacja galerii została zakodowana przy użyciu mikro frameworku aplikacji webowych napisany w języku Python. Styl stron HTML został zakodowany przy pomocy CSS, wraz z okazyjnym użyciem skryptu Javascript.
 
 Aplikacja generuje galerię zdjęć przy użyciu API UnsplashSource. API to generuje czasami te same obrazy, ale ze względu na prędkość działania strony nie są one usuwane przez aplikację. Na obrazy można nałożyć rozmycie, zmniejszyć/zwiększyć jasność lub nałożyć transpozycje. Można je także usunąć z galerii.
